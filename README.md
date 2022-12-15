@@ -1,1 +1,1 @@
-# theatrecms-summary
+# Code Summary - Theatre Content Management System 
