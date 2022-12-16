@@ -6,9 +6,9 @@
 </div>
 
 <div align="center">
-<h1> Code Summary - Theatre Content Management System </h1>
+<h1> Content Management System Code Summary </h1>
 
-<p>Code snippets from my collaboration on the development of a CMS.</p>
+<p>Insights and code snippets from my collaboration on the development of a Theatre CMS.</p>
 
 <div>
 <a href="https://dotnet.microsoft.com/en-us/" target="_blank" rel="noreferrer" ><img src="https://delaplex.com/wp-content/uploads/2020/02/asp-net-mvc-logo-300x200.png" width="120" height="75" alt=".NET" /></a>
@@ -26,28 +26,44 @@
 
 
 ## Introduction
-
+I had the opportunity to work as part of a development team to create a full-scale MVC Web Application in C#. We used Agile/Scrum, with two-week sprints. I completed several stories while working on both the front and backend.
 
 
 ## Stories
 
-Here I'll share a few stories I worked on.
+Here I'll share about a few stories I worked on.
 
-- <a href="#styling-pages">Story 1</a>
+- <a href="#ui-styling">UI Styling</a>
 
+- <a href="#asynchronous-database-updates-with-ajax">Asynchronous Database Updates</a>
 
+- <a href="#mapping-the-database-with-entity-framework">Mapping the Database</a>
 
+- <a href="#seeding-data-to-the-database">Seeding Data to the Database</a>
 
-### Code to Database Approach 
+<br></br>
+### UI Styling
 
+#### Styling the UI with CSS & BootStrap
 
-### Styling Pages
+#### Programming the UI with jQuery
 
+<br></br>
+### Asynchronous Database Updates with AJAX
 
-### Updating Database with AJAX
+<br></br>
+### Mapping the Database with Entity Framework
+#### Creating an Area Model  
+#### Creating an Area Admin Model
+TPH Structure
 
-
-### Creating an Area Admin - TPH Structure
-
-
+<br></br>
 ### Seeding Data to the Database
+
+
+## Conclusion
+
+
+<br></br>
+
+<div align="center"><a href="https://rxvs.dev" target="_blank" rel="noreferrer">Code Summary by Ramon</a></div>
