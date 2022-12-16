@@ -1,7 +1,9 @@
+<div align="right"><a href="https://github.com/ramvilsil">My GitHub</a></div>
+
 <div align="center">
 <h1> Code Summary - Theatre Content Management System </h1>
 
-Code snippets from my collaboration on the development of a CMS.
+<p>Code snippets from my collaboration on the development of a CMS.</p>
 
 <a href="https://dotnet.microsoft.com/en-us/" target="_blank" rel="noreferrer" ><img src="https://delaplex.com/wp-content/uploads/2020/02/asp-net-mvc-logo-300x200.png" width="120" height="75" alt=".NET" /></a>
 
@@ -24,7 +26,7 @@ Code snippets from my collaboration on the development of a CMS.
 
 Here I'll share a few stories I worked on.
 
-- [Story 1](#Stories)
+- <a href="https://github.com/ramvilsil">Story 1</a>
 
 
 
