@@ -1,7 +1,7 @@
 <div align="right">
 
-<a href="https://github.com/ramvilsil" target="_blank" rel="noreferrer"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png" width="36" height="36" alt="GitHub" /></a> &nbsp;
-<a href="https://linkedin.com/in/ramvilsil" target="_blank" rel="noreferrer"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="36" height="36" alt="LinkedIn" /></a>
+<a href="https://github.com/ramvilsil/summary-theatrecms" rel="noreferrer"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png" width="36" height="36" alt="GitHub" /></a> &nbsp;
+<a href="https://linkedin.com/in/ramvilsil" rel="noreferrer"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="36" height="36" alt="LinkedIn" /></a>
 
 </div>
 
@@ -273,4 +273,4 @@ public static void Seed(ApplicationDbContext context)
 
 
 
-<div align="center"><a href="https://rxvs.dev" target="_blank" rel="noreferrer">Code Summary by Ramon</a></div>
+<div align="center"><a href="https://rxvs.dev" rel="noreferrer">Code Summary by Ramon</a></div>
