@@ -31,7 +31,7 @@ I had the opportunity to contribute to create a full-scale MVC Web Application 
 
 ## Stories
 
-I'll go over stories I worked on.
+I'll go over some stories I worked on.
 
 - <a href="#ui-styling">UI Styling</a>
 
@@ -120,7 +120,7 @@ As the views had been scaffolded, we were left with an auto generated web page t
             </div>
 ```
 
-The purpose of this page was to present all of the relevant items in the database. The idea was that once the items were "deleted," they would no longer exist on the page. However, these objects were never meant to be deleted from the database, but rather their DateTime "left date" properties were to be updated using the DateTime.Now() method upon confirming their deletion. The implementation of this kind of "deletion" didn't occur until later on so this resulted in an empty "left date" area as you can see below. This may not be a significant issue, but it's something I kept in mind because you normally want to write code that works in way that's mindful of future changes.
+The purpose of this page was to present all of the relevant items in the database. The idea was that once the items were "deleted," they would no longer exist on the page. However, these objects were never meant to be deleted from the database, but rather their DateTime "left date" properties were to be updated using the DateTime.Now method upon confirming their deletion. The implementation of this kind of "deletion" didn't occur until later on so this resulted in an empty "left date" area as you can see below. This may not be a significant issue, but it's something I kept in mind because you normally want to write code that works in way that's mindful of future changes.
 
 ![Screenshot_20221216_123745](https://user-images.githubusercontent.com/115331883/208185012-d49b3d13-7ed2-40e3-a24d-7eeef2332a22.png)
 
@@ -189,11 +189,24 @@ function closeModal(authorId, buttonName) {
 
 ### Asynchronous Database Updates with AJAX
 
-HTML onclick Attribute
+The objective here is to "remove" the displayed database objects without requiring a page refresh.
+
+Once users click the delete button, a function is called and the id of the database object is passed. 
+This is done so that the database object may be targeted correctly on both front and back ends. 
+
+The button's own id "deleteButton" is also passed since the function's purpose is to close the modal, 
+so when other buttons like the "closeButton" would be clicked, the function can differentiate
+between them and deliver the correct outcome.
+
+.cshtml
 ```
 onclick="closeModal(@item.BlogAuthorId, 'deleteButton')
 ```
-JavaScript
+Clicking the delete button would lead the program to this point where the jQuery .ajax()
+function is called to perform an asynchronous HTTP request.
+The JSON data is posted to the corresponding class controller's method "AsyncDelete". 
+
+.js
 ```
 $.ajax({
             type: "POST",
@@ -202,12 +215,20 @@ $.ajax({
         })
        
 ```
-C# Class
+
+To allow the objects to display on the page, we must ensure that the "Left" property is nullable,
+because it cannot be null if it is not nullable, and the idea here is that only objects with
+a null "Left" property can display on the page.
+
+.cs
 ```
 public DateTime? Left { get; set; }
 ```
 
-C# Controller
+The "AsyncDelete" method takes the id of the object and creates an instance of it with the data from the database.
+DateTime.Now is used to update the "Left" property. The property changes are then saved to the database.
+
+.cs
 ```
 public ActionResult AsyncDelete(int id)
         {
@@ -220,12 +241,13 @@ public ActionResult AsyncDelete(int id)
 
 ### Mapping the Database with Entity Framework
 
-C#
+.cs
 ```
 public System.Data.Entity.DbSet<TheatreCMS3.Areas.Blog.Models.BlogAuthor> BlogAuthors { get; set; }
 
 ```
-SQL
+
+.sql
 ```
 CREATE TABLE [dbo].[BlogAuthors] (
     [BlogAuthorId] INT            IDENTITY (1, 1) NOT NULL,
