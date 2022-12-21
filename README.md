@@ -26,12 +26,12 @@
 
 
 ## Introduction
-I had the opportunity to work as part of a development team to create a full-scale MVC Web Application in C#. We used Agile/Scrum, with two-week sprints. I completed several stories while working on both the front and backend.
+I had the opportunity to contribute to create a full-scale MVC Web Application as part of a development team. The project consisted of a management system for a Portland theater. Our team employed Agile/Scrum, with two-week sprints that included planning, daily standups, sprint retrospectives, and review. I worked on various user stories on both the front and backend.
 
 
 ## Stories
 
-Here I'll share about a few stories I worked on.
+I'll go over stories I worked on.
 
 - <a href="#ui-styling">UI Styling</a>
 
@@ -45,7 +45,11 @@ Here I'll share about a few stories I worked on.
 
 
 #### Styling the UI with CSS & BootStrap
-Replacing 
+
+As the views had been scaffolded, we were left with an auto generated web page that, although functional, lacked the required user-friendly features. To achieve the desired effects of the user story, I was to restructure the page's HTML and create new locally scoped CSS classes.
+
+
+.cshtml
 ```
 <div class="blog_author-details-delete--mainContainer">
 
@@ -115,12 +119,18 @@ Replacing
 
             </div>
 ```
+
+The purpose of this page was to present all of the relevant items in the database. The idea was that once the items were "deleted," they would no longer exist on the page. However, these objects were never meant to be deleted from the database, but rather their DateTime "left date" properties were to be updated using the DateTime.Now() method upon confirming their deletion. The implementation of this kind of "deletion" didn't occur until later on so this resulted in an empty "left date" area as you can see below. This may not be a significant issue, but it's something I kept in mind because you normally want to write code that works in way that's mindful of future changes.
+
 ![Screenshot_20221216_123745](https://user-images.githubusercontent.com/115331883/208185012-d49b3d13-7ed2-40e3-a24d-7eeef2332a22.png)
 
 
 
 #### Programming the UI with jQuery
-Creating a modal
+
+I implemented a modal that would popup when the delete button was clicked to confirm with the user if they intended to delete the database object. To do so, I simply put the modal together with HTML and CSS.
+
+.css
 ```
 .blog_author-index--deleteModalContainer {
     color: black;
@@ -148,6 +158,9 @@ Creating a modal
 
 ```
 
+The modal's display attribute was set to none by default. Using jQuery, the modal was programmed to display upon clicking the delete button and to disappear upon confirming deletion or clicking the close button.
+
+.js
 ```
 //Call upon clicking delete button
 function deleteAuthor(authorId) {
