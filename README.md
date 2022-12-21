@@ -240,6 +240,10 @@ public ActionResult AsyncDelete(int id)
 
 #### Creating an Area Model  
 
+
+I created a model for the project's "Blog" area named "BlogAuthor" 
+and then ran database migrations to maintain the schema in sync.
+
 .cs
 ```
 public System.Data.Entity.DbSet<TheatreCMS3.Areas.Blog.Models.BlogAuthor> BlogAuthors { get; set; }
@@ -258,17 +262,18 @@ CREATE TABLE [dbo].[BlogAuthors] (
 ```
 
 #### Creating an Area Admin Model
-TPH Structure
+
+Using the TPH approach, I implemented an admin model named "HeadAuthor" for the project's "Blog" area.
+
+```
+        public int ViewsPerMonth { get; set; }
+        public int AuthorsHired { get; set; }
+        public int AuthorsLetGo { get; set; }
+```
 
 ### Seeding Data to the Database
 
-.cs
-```
-protected override void Seed(ApplicationDbContext context)
-        {
-            HeadAuthor.Seed(context);
-        }
-```
+To put the new admin class to the test, I added a seed method to the "HeadAuthor" class, followed by an override method in "Configuration.cs" that provides a new implementation of the method as inherited from the base class.
 
 .cs
 ```
@@ -300,9 +305,14 @@ public static void Seed(ApplicationDbContext context)
 
             }
 ```
-The data table showing seeded data.
 
-![Screenshot_20221216_124911](https://user-images.githubusercontent.com/115331883/208186532-8d11138a-19b7-4280-b124-69cf5c94a295.png)
+.cs
+```
+protected override void Seed(ApplicationDbContext context)
+        {
+            HeadAuthor.Seed(context);
+        }
+```
 
 
 ## Conclusion
