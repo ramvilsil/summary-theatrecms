@@ -1,6 +1,6 @@
 <div align="right">
 
-<a href="https://github.com/ramvilsil/summary-theatrecms" rel="noreferrer"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png" width="36" height="36" alt="GitHub" /></a> &nbsp;
+<a href="https://github.com/ramvilsil/" rel="noreferrer"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png" width="36" height="36" alt="GitHub" /></a> &nbsp;
 <a href="https://linkedin.com/in/ramvilsil" rel="noreferrer"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="36" height="36" alt="LinkedIn" /></a>
 
 </div>
@@ -8,7 +8,7 @@
 <div align="center">
 <h1> Content Management System Code Summary </h1>
 
-<p>Insights and code snippets from my collaboration on the development of a Theatre CMS.</p>
+<p>Insights and code snippets from my collaboration on the development of a CMS.</p>
 
 <div>
 <a href="https://dotnet.microsoft.com/en-us/" target="_blank" rel="noreferrer" ><img src="https://delaplex.com/wp-content/uploads/2020/02/asp-net-mvc-logo-300x200.png" width="120" height="75" alt=".NET" /></a>
@@ -150,12 +150,10 @@ I implemented a modal that would popup when the delete button was clicked to c
     z-index: 100;
 }
 
-
 .blog_author-index--deleteModalTopRow {
     display: flex;
     justify-content: space-between
 }
-
 ```
 
 The modal's display attribute was set to none by default. Using jQuery, the modal was programmed to display upon clicking the delete button and to disappear upon confirming deletion or clicking the close button.
@@ -213,7 +211,6 @@ $.ajax({
             url: "/BlogAuthors/AsyncDelete",
             data: { id: authorId },
         })
-       
 ```
 
 To allow the objects to display on the page, we must ensure that the "Left" property is nullable,
@@ -241,10 +238,11 @@ public ActionResult AsyncDelete(int id)
 
 ### Mapping the Database with Entity Framework
 
+#### Creating an Area Model  
+
 .cs
 ```
 public System.Data.Entity.DbSet<TheatreCMS3.Areas.Blog.Models.BlogAuthor> BlogAuthors { get; set; }
-
 ```
 
 .sql
@@ -258,13 +256,13 @@ CREATE TABLE [dbo].[BlogAuthors] (
     CONSTRAINT [PK_dbo.BlogAuthors] PRIMARY KEY CLUSTERED ([BlogAuthorId] ASC)
 );
 ```
-#### Creating an Area Model  
+
 #### Creating an Area Admin Model
 TPH Structure
 
 ### Seeding Data to the Database
 
-C#
+.cs
 ```
 protected override void Seed(ApplicationDbContext context)
         {
@@ -272,6 +270,7 @@ protected override void Seed(ApplicationDbContext context)
         }
 ```
 
+.cs
 ```
 public static void Seed(ApplicationDbContext context)
         {
@@ -301,11 +300,19 @@ public static void Seed(ApplicationDbContext context)
 
             }
 ```
+The data table showing seeded data.
+
 ![Screenshot_20221216_124911](https://user-images.githubusercontent.com/115331883/208186532-8d11138a-19b7-4280-b124-69cf5c94a295.png)
 
 
 ## Conclusion
 
+Project management is a crucial aspect of programming professionally.
+Working in a team and using project management techniques was a wonderful experience for me. It was nice to be able to perform it rather than simply learn about it.
+
+When working on a project that is in the middle of its life cycle, it is important to first grasp the context. The context might be things like the technology being used and the subject of the project itself. You must also acknowledge that the program is not your personal project and that you must execute things in a particular way, even if you don't love the way it's done.
+
+If I could work on this project again, I think looking back there are things I could have implemented in a better way. I believe I could have done better if I had a better understanding of what the following stories would be. I could have been more thoughtful of them during the stories I was working on to make their implementation easier later on. My final takeaway is that I now understand why they say you'll learn most of your skills on the job because I encountered many things that I didn't know exactly how to do but had a general idea of how to do them.
 
 
 <div align="center"><a href="https://rxvs.dev" rel="noreferrer">Code Summary by Ramon</a></div>
